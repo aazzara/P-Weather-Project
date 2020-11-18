@@ -1,0 +1,42 @@
+body {
+  margin-top: 10px;
+}
+p {
+  font-size: 14px;
+  margin: 0 auto;
+}
+.container {
+  border: solid 1px black;
+  border-radius: 5px;
+  padding-top: 10px;
+  background: rgba(210, 210, 245, 0.4);
+}
+.city {
+  text-align: center;
+  position: relative;
+  top: 20px;
+  text-transform: capitalize;
+}
+.temp {
+  text-align: center;
+}
+.future {
+  padding: 10px;
+}
+.day {
+  border: solid 1px black;
+  border-radius: 10px;
+  text-align: center;
+  margin: 5px;
+
+  background: linear-gradient(
+    rgba(196, 196, 243, 0.7),
+    rgba(114, 143, 224, 0.7)
+  );
+}
+.other-unit {
+  font-size: 16px;
+  position: relative;
+  bottom: 16px;
+  color: navy;
+}
