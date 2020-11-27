@@ -5,6 +5,12 @@ p {
   font-size: 14px;
   margin: 0 auto;
 }
+h1 {
+  margin: 0 auto;
+}
+h6 {
+  margin: 0 auto;
+}
 .content {
   border: solid 1px black;
   border-radius: 5px;
@@ -18,6 +24,12 @@ p {
 }
 .search-bar {
   padding-left: 10px;
+}
+.celsius {
+  text-decoration: underline;
+  font-size: 18px;
+  position: relative;
+  bottom: 16px;
 }
 .city {
   text-align: center;
