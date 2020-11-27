@@ -4,7 +4,6 @@ body {
 p {
   font-size: 14px;
   margin: 0 auto;
-  padding-top: 6px;
 }
 .content {
   border: solid 1px black;
@@ -57,4 +56,7 @@ p {
 }
 .btn {
   margin-left: 14px;
+}
+.footer {
+  padding-top: 6px;
 }

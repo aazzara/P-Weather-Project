@@ -18,6 +18,7 @@ let currentTime = document.querySelector(".current-time");
 currentTime.innerHTML = `${day} ${hour}:${minute}`;
 
 function updateValues(value) {
+  console.log(value);
   event.preventDefault();
   let temperature = Math.round(value.data.main.temp);
   let newTemp = document.querySelector(".current-temp");
@@ -25,6 +26,12 @@ function updateValues(value) {
   let high = Math.round(value.data.main.temp_max);
   let newHigh = document.querySelector(".current-high");
   newHigh.innerHTML = high;
+  let humidity = value.data.main.humidity;
+  let newHumidity = document.querySelector(".current-humidity");
+  newHumidity.innerHTML = humidity;
+  let wind = value.data.wind.speed;
+  let newWind = document.querySelector(".current-wind");
+  newWind.innerHTML = wind;
 }
 
 function logInput(result) {
@@ -50,6 +57,12 @@ function updateLocation(current) {
   let high = Math.round(current.data.main.temp_max);
   let newHigh = document.querySelector(".current-high");
   newHigh.innerHTML = high;
+  let humidity = current.data.main.humidity;
+  let newHumidity = document.querySelector(".current-humidity");
+  newHumidity.innerHTML = humidity;
+  let wind = current.data.wind.speed;
+  let newWind = document.querySelector(".current-wind");
+  newWind.innerHTML = wind;
 }
 
 function displayCurrent(current) {
