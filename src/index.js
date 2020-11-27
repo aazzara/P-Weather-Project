@@ -34,7 +34,7 @@ function updateValues(value) {
   newWind.innerHTML = wind;
 }
 
-function logInput(result) {
+function searchInput(result) {
   event.preventDefault();
   let changeCity = document.querySelector("#changeCity");
   let city = document.querySelector(".location");
@@ -65,7 +65,7 @@ function updateLocation(current) {
   newWind.innerHTML = wind;
 }
 
-function displayCurrent(current) {
+function searchCurrent(current) {
   let apiKey = `e57aed5a3752290f9e3c0dd1d0ad914d`;
   let latitude = current.coords.latitude;
   let longitude = current.coords.longitude;
@@ -74,11 +74,11 @@ function displayCurrent(current) {
 }
 
 function getLocation() {
-  navigator.geolocation.getCurrentPosition(displayCurrent);
+  navigator.geolocation.getCurrentPosition(searchCurrent);
 }
 
 let input = document.querySelector(".search-form");
-input.addEventListener("submit", logInput);
+input.addEventListener("submit", searchInput);
 
 let current = document.querySelector(".btn-info");
 current.addEventListener("click", getLocation);
