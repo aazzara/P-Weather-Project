@@ -69,8 +69,28 @@ function getLocation() {
   navigator.geolocation.getCurrentPosition(searchCurrent);
 }
 
+function convertToCelsius(temperature) {
+let celsius = document.querySelector(".celsius");
+celsius.setAttribute("class", "fahrenheit")
+let fahrenheit = document.querySelector(".fahrenheit");
+  fahrenheit.setAttribute("class", "celsius");
+}
+
+function convertToFahrenheit(temperature) {
+  let fahrenheit = document.querySelector(".fahrenheit");
+  fahrenheit.setAttribute("class", "fahrenheit");
+  let celsius = document.querySelector(".celsius");
+  celsius.setAttribute("class", "celsius");
+}
+
 let input = document.querySelector(".search-form");
 input.addEventListener("submit", searchInput);
 
 let current = document.querySelector(".btn-info");
 current.addEventListener("click", getLocation);
+
+let celsius = document.querySelector(".celsius");
+celsius.addEventListener("click", convertToCelsius);
+
+let fahrenheit = document.querySelector(".fahrenheit");
+fahrenheit.addEventListener("click", convertToFahrenheit);
