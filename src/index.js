@@ -51,18 +51,7 @@ function updateLocation(current) {
   let currentCity = current.data.name;
   let city = document.querySelector(".location");
   city.innerHTML = currentCity;
-  let temperature = Math.round(current.data.main.temp);
-  let newTemp = document.querySelector(".current-temp");
-  newTemp.innerHTML = temperature;
-  let high = Math.round(current.data.main.temp_max);
-  let newHigh = document.querySelector(".current-high");
-  newHigh.innerHTML = high;
-  let humidity = current.data.main.humidity;
-  let newHumidity = document.querySelector(".current-humidity");
-  newHumidity.innerHTML = humidity;
-  let wind = current.data.wind.speed;
-  let newWind = document.querySelector(".current-wind");
-  newWind.innerHTML = wind;
+  updateValues(current);
 }
 
 function searchCurrent(current) {
