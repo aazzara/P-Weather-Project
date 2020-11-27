@@ -32,6 +32,9 @@ function updateValues(value) {
   let wind = value.data.wind.speed;
   let newWind = document.querySelector(".current-wind");
   newWind.innerHTML = wind;
+  let icon = `http://openweathermap.org/img/wn/${value.data.weather[0].icon}@2x.png`;
+  let image = document.querySelector(".icon");
+  image.setAttribute("src", icon)
 }
 
 function searchInput(result) {
