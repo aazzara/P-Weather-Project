@@ -40,6 +40,10 @@ function updateValues(value) {
   newCondition.innerHTML = condition;
 }
 
+function updateForecast(value) {
+console.log(value);
+}
+
 function searchInput(result) {
   event.preventDefault();
   let changeCity = document.querySelector("#changeCity");
@@ -51,6 +55,10 @@ function searchInput(result) {
   let apiEndpoint = `https://api.openweathermap.org/data/2.5/weather?q=`;
   let apiUrl = `${apiEndpoint}${newCity}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(updateValues);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${newCity}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(updateForecast);
+
 }
 
 function updateLocation(current) {
@@ -66,6 +74,9 @@ function searchCurrent(current) {
   let longitude = current.coords.longitude;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(updateLocation);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`
+  axios.get(apiUrl).then(updateForecast);
 }
 
 function getLocation() {
