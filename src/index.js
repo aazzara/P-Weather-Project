@@ -41,17 +41,21 @@ function updateValues(value) {
 }
 
 function updateForecast(value) {
-   for (let index = 0; index < 5; index++) {
-    let date = new Date(value.data.list[index].dt*1000);
+    let date = new Date(value.data.list[0].dt*1000);
     day = days[date.getDay()];
     hour = date.getHours();
     minute = date.getMinutes();
     if (minute < 10) minute = "0" + minute;
-    let time = `${day} ${hour}:${minute}`;
-    console.log(time);
-    temperature = Math.round(value.data.list[index].main.temp);
-    icon = `http://openweathermap.org/img/wn/${value.data.list[index].weather[0].icon}@2x.png`
-  }
+    let time = `${day.substring(0,3)} ${hour}:${minute}`;
+    let rangeOne = document.querySelector(".rangeOne");
+    rangeOne.innerHTML = time;
+    let iconOne = document.querySelector(".iconOne");
+    icon = `http://openweathermap.org/img/wn/${value.data.list[0].weather[0].icon}@2x.png`
+    iconOne.setAttribute("src", icon);
+    temperature = Math.round(value.data.list[0].main.temp);
+    let tempOne = document.querySelector(".tempOne");
+    tempOne.innerHTML = temperature;
+  
 }
 
 function searchInput(result) {
