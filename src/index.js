@@ -18,7 +18,6 @@ let currentTime = document.querySelector(".current-time");
 currentTime.innerHTML = `${day} ${hour}:${minute}`;
 
 function updateValues(value) {
-  console.log(value);
   event.preventDefault();
   let temperature = Math.round(value.data.main.temp);
   let newTemp = document.querySelector(".current-temp");
@@ -73,19 +72,21 @@ function getLocation() {
 function convertToCelsius(temperature) {
 let temperatureValue = document.querySelector(".current-temp");
 temperatureValue.innerHTML = Math.round((fahrenheitTemperature-32)*5/9);
-console.log(temperatureValue);
-console.log(fahrenheitTemperature);
-let fahrenheit = document.querySelector(".fahrenheit");
-fahrenheit.setAttribute("class", "celsius");
+fahrenheit.removeAttribute("class", "active");
+fahrenheit.setAttribute("class", "inactive");
+celsius.removeAttribute("class", "inactive");
+celsius.setAttribute("class", "active");
 }
 
 function convertToFahrenheit(temperature) {
+  event.preventDefault();
   let temperatureValue = document.querySelector(".current-temp");
   temperatureValue.innerHTML = fahrenheitTemperature;
-  let fahrenheit = document.querySelector(".fahrenheit");
-  fahrenheit.setAttribute("class", "fahrenheit");
-  let celsius = document.querySelector(".celsius");
-  celsius.setAttribute("class", "celsius");
+  fahrenheit.setAttribute("class", "active");
+  fahrenheit.removeAttribute("class", "inactive");
+  celsius.removeAttribute("class", "active");
+  celsius.setAttribute("class", "inactive");
+
 }
 
 let input = document.querySelector(".search-form");
