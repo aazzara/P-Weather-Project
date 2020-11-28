@@ -23,6 +23,7 @@ function updateValues(value) {
   let temperature = Math.round(value.data.main.temp);
   let newTemp = document.querySelector(".current-temp");
   newTemp.innerHTML = temperature;
+  fahrenheitTemperature = temperature;
   let high = Math.round(value.data.main.temp_max);
   let newHigh = document.querySelector(".current-high");
   newHigh.innerHTML = high;
@@ -70,13 +71,17 @@ function getLocation() {
 }
 
 function convertToCelsius(temperature) {
-let celsius = document.querySelector(".celsius");
-celsius.setAttribute("class", "fahrenheit")
+let temperatureValue = document.querySelector(".current-temp");
+temperatureValue.innerHTML = Math.round((fahrenheitTemperature-32)*5/9);
+console.log(temperatureValue);
+console.log(fahrenheitTemperature);
 let fahrenheit = document.querySelector(".fahrenheit");
-  fahrenheit.setAttribute("class", "celsius");
+fahrenheit.setAttribute("class", "celsius");
 }
 
 function convertToFahrenheit(temperature) {
+  let temperatureValue = document.querySelector(".current-temp");
+  temperatureValue.innerHTML = fahrenheitTemperature;
   let fahrenheit = document.querySelector(".fahrenheit");
   fahrenheit.setAttribute("class", "fahrenheit");
   let celsius = document.querySelector(".celsius");
@@ -88,6 +93,8 @@ input.addEventListener("submit", searchInput);
 
 let current = document.querySelector(".btn-info");
 current.addEventListener("click", getLocation);
+
+let fahrenheitTemperature = null;
 
 let celsius = document.querySelector(".celsius");
 celsius.addEventListener("click", convertToCelsius);
