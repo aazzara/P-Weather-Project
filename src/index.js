@@ -35,6 +35,9 @@ function updateValues(value) {
   let icon = `http://openweathermap.org/img/wn/${value.data.weather[0].icon}@2x.png`;
   let image = document.querySelector(".icon");
   image.setAttribute("src", icon)
+  let condition = value.data.weather[0].main;
+  let newCondition = document.querySelector(".condition");
+  newCondition.innerHTML = condition;
 }
 
 function searchInput(result) {
