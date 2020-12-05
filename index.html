@@ -16,76 +16,40 @@
 <body>
     <div class="container">
         <div class="content">
-        <div class="search-bar">
-            <form class="search-form">
-                <input class="col-6" id="changeCity" type="text" placeholder="Change city" autocomplete="off" />
-                <input type="submit" value="Search" class=" col-2 btn btn-light" />
-                <input type="submit" value="Current Location" class="btn btn-info"> </form>
-        </div>
-        <br />
-        <div class="row">
-            <div class="col city">
-                <h1 class="location"></h1>
-
-                <h5 class="current-time"></h5>
+            <div class="search-bar">
+                <form class="search-form">
+                    <input class="col-6" id="changeCity" type="text" placeholder="Change city" autocomplete="off" />
+                    <input type="submit" value="Search" class=" col-2 btn btn-light" />
+                    <input type="submit" value="Current Location" class="btn btn-info"> </form>
             </div>
-            <div class="col temp">
-                
-                <h6>Right Now, <span class="condition"></span> </h6>
-                <h1><img class="icon" src=""><span class="current-temp"></span>
+        <br />
+            <div class="row">
+                <div class="col city">
+                    <h1 class="location"></h1>
+
+                    <h5 class="current-time"></h5>
+                </div>
+                <div class="col temp">
+                    <h6>Right Now, <span class="condition"></span> </h6>
+                    <h1><img class="icon" src=""><span class="current-temp"></span>
                     <a href="#" class="active fahrenheit"> ºF </a>
                     <a href="#"><small class="inactive celsius">ºC</small></a>
-                </h1>
-                <p>Today's High: <span class="current-high"></span>ºF
+                    </h1>
+                    <p>Today's High: <span class="current-high"></span>ºF
                     <br>
-                Humidity: <span class="current-humidity"></span>%
-                <br>
-                Wind: <span class="current-wind"></span>km/h</p>
-            </div>  
-        </div>
+                    Humidity: <span class="current-humidity"></span>%
+                    <br>
+                    Wind: <span class="current-wind"></span>km/h</p>
+                </div>  
+            </div>
         <br />
-        <div class="row future">
-            <div class="col range">
-                <span class="rangeOne"></span>
-                <br />
-                <img class="iconOne forecastIcon" src="">
-                <br />
-                <span class="tempOne"></span>ºF
+            <div class="row future" id="forecast">   
             </div>
-            <div class="col range">
-                <span class="rangeTwo">Tuesday</span>
-                <br />
-                <i class="fas fa-cloud-sun-rain"></i>
-                <br />
-                67ºF
-            </div>
-            <div class="col range">
-                <span class="rangeThree"> Wednesday </span>
-                <br />
-                <i class="fas fa-cloud-sun-rain"></i>
-                <br />
-                70ºF
-            </div>
-            <div class="col range">
-                <span class="rangeFour"> Thursday </span>
-                <br />
-                <i class="fas fa-cloud-sun-rain"></i>
-                <br />
-                72ºF
-            </div>
-            <div class="col range">
-                <span class="rangeFive"> Friday </span>
-                <br />
-                <i class="fas fa-cloud-sun-rain"></i>
-                <br />
-                75ºF
-            </div>
-        </div>
         </div>
         <p class="footer">
         <a href="https://github.com/aazzara/P-Weather-Project" target="_blank">
             Open-source code</a>, by Alicia Azzara
-    </p>
+        </p>
     </div>
     <script src="src/index.js" ;></script>
 </body>

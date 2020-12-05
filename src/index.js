@@ -41,21 +41,29 @@ function updateValues(value) {
 }
 
 function updateForecast(value) {
-    let date = new Date(value.data.list[0].dt*1000);
+      let forecastElement = document.querySelector("#forecast");
+      forecastElement.innerHTML = null;
+      let forecast = null;
+  for (let index = 0; index < 6; index++) {
+    forecast = value.data.list[index];
+    let date = new Date(forecast.dt*1000);
     day = days[date.getDay()];
     hour = date.getHours();
     minute = date.getMinutes();
     if (minute < 10) minute = "0" + minute;
     let time = `${day.substring(0,3)} ${hour}:${minute}`;
-    let rangeOne = document.querySelector(".rangeOne");
-    rangeOne.innerHTML = time;
-    let iconOne = document.querySelector(".iconOne");
-    icon = `http://openweathermap.org/img/wn/${value.data.list[0].weather[0].icon}@2x.png`
-    iconOne.setAttribute("src", icon);
-    temperature = Math.round(value.data.list[0].main.temp);
-    let tempOne = document.querySelector(".tempOne");
-    tempOne.innerHTML = temperature;
-  
+    let icon = `http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`
+    temperature = Math.round(forecast.main.temp);
+    forecastElement.innerHTML += 
+    `<div class="col range">
+      <span class="time-range">${time}</span>
+        <br />
+          <img class="forecastIcon" src="${icon}" alt="icon">
+        <br />
+      <span class="tempOne">${temperature}</span>ºF
+    </div>`
+  console.log(time);
+  }
 }
 
 function searchInput(result) {

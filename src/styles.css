@@ -59,6 +59,7 @@ h6 {
 }
 .range {
   border: solid 1px black;
+  max-width: 100px;
   border-radius: 10px;
   text-align: center;
   margin: 5px;
