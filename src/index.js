@@ -29,7 +29,7 @@ function updateValues(value) {
   let humidity = value.data.main.humidity;
   let newHumidity = document.querySelector(".current-humidity");
   newHumidity.innerHTML = humidity;
-  let wind = value.data.wind.speed;
+  let wind = Math.round(value.data.wind.speed);
   let newWind = document.querySelector(".current-wind");
   newWind.innerHTML = wind;
   let icon = `http://openweathermap.org/img/wn/${value.data.weather[0].icon}@2x.png`;
@@ -110,8 +110,8 @@ function convertToFahrenheit(temperature) {
   event.preventDefault();
   let temperatureValue = document.querySelector(".current-temp");
   temperatureValue.innerHTML = fahrenheitTemperature;
-  fahrenheit.setAttribute("class", "active");
   fahrenheit.removeAttribute("class", "inactive");
+  fahrenheit.setAttribute("class", "active");
   celsius.removeAttribute("class", "active");
   celsius.setAttribute("class", "inactive");
 
